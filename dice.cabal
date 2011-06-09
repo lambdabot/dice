@@ -1,0 +1,20 @@
+name:                   dice
+version:                0.0.0.1
+stability:              work-in-progress
+
+cabal-version:          >= 1.2
+build-type:             Simple
+
+author:                 James Cook <mokus@deepbondi.net>
+maintainer:             James Cook <mokus@deepbondi.net>
+
+description:            Simplistic D&D style dice-rolling system.
+
+Library
+  hs-source-dirs:       src
+  exposed-modules:      Data.Random.Dice
+  build-depends:        base >= 3, random-fu, parsec, transformers
+
+Executable dice
+  hs-source-dirs:       src
+  main-is:              Dice.hs
