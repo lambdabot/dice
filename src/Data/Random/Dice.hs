@@ -221,7 +221,7 @@ primExp = try dieExp <|> numExp <|> parens diceLang term
 dieExp :: (Integral a) => CharParser Bool (Expr (RVar [a]))
 dieExp = do
     (cStr, count) <- option ("", 1) number
-    (sStr, sides) <- char 'd' >> number
+    (sStr, sides) <- char 'd' >> positiveNumber
     setState True
     return (Const (cStr ++ 'd' : sStr) (roll (fromInteger count) (fromInteger sides)))
 
@@ -235,3 +235,9 @@ number = do
     n <- many1 digit <?> "number"
     whiteSpace diceLang
     return (n, read n)
+
+positiveNumber :: CharParser st (String, Integer)
+positiveNumber = do
+    (s,n) <- number
+    guard (n>0)
+    return (s,n)
