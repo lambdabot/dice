@@ -44,7 +44,7 @@ evalExprWithDiv (/) = foldExpr (const return) (liftM2 (+)) (liftM2 (-)) (liftM2 
     where
         divM x y = join (liftM2 (/) x y)
 
-evalFractionalExpr :: (Fractional a, Monad m) => Expr a -> m a
+evalFractionalExpr :: (Eq a, Fractional a, Monad m) => Expr a -> m a
 evalFractionalExpr = evalExprWithDiv divM
     where
         divM x 0 = fail "Divide by zero!"
@@ -92,7 +92,7 @@ fmtIntegralListExpr e =
     . showError (evalIntegralExpr (fmap sum e))
     $ ""
 
-fmtSimple :: Integral a => Expr [a] -> String
+fmtSimple :: (Integral a, Show a) => Expr [a] -> String
 fmtSimple (Const _ []) = "0"
 fmtSimple (Const _ [e]) = show e
 fmtSimple e = 

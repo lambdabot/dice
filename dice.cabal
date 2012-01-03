@@ -10,6 +10,10 @@ maintainer:             James Cook <mokus@deepbondi.net>
 
 description:            Simplistic D&D style dice-rolling system.
 
+source-repository head
+  type: git
+  location: git://github.com/mokus0/dice.git
+
 Library
   hs-source-dirs:       src
   exposed-modules:      Data.Random.Dice
