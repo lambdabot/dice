@@ -9,6 +9,7 @@ author:                 James Cook <mokus@deepbondi.net>
 maintainer:             James Cook <mokus@deepbondi.net>
 license:                PublicDomain
 
+category:               Unclassified
 synopsis:               Simplistic D&D style dice-rolling system.
 description:            Simplistic D&D style dice-rolling system.
 
@@ -19,7 +20,7 @@ source-repository head
 Library
   hs-source-dirs:       src
   exposed-modules:      Data.Random.Dice
-  build-depends:        base >= 3, random-fu, parsec, transformers
+  build-depends:        base >= 3 && < 5, random-fu, parsec, transformers
 
 Executable dice
   hs-source-dirs:       src
