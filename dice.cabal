@@ -1,5 +1,5 @@
 name:                   dice
-version:                0.0.0.1
+version:                0.1
 stability:              work-in-progress
 
 cabal-version:          >= 1.6
@@ -9,7 +9,7 @@ author:                 James Cook <mokus@deepbondi.net>
 maintainer:             James Cook <mokus@deepbondi.net>
 license:                PublicDomain
 
-category:               Unclassified
+category:               Game
 synopsis:               Simplistic D&D style dice-rolling system.
 description:            Simplistic D&D style dice-rolling system.
 
