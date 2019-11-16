@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 module Data.Random.Dice where
 
 import Data.Random
@@ -44,13 +45,21 @@ evalExprWithDiv (/) = foldExpr (const return) (liftM2 (+)) (liftM2 (-)) (liftM2 
     where
         divM x y = join (liftM2 (/) x y)
 
+#if __GLASGOW_HASKELL__ < 808
 evalFractionalExpr :: (Eq a, Fractional a, Monad m) => Expr a -> m a
+#else
+evalFractionalExpr :: (Eq a, Fractional a, MonadFail m) => Expr a -> m a
+#endif
 evalFractionalExpr = evalExprWithDiv divM
     where
         divM x 0 = fail "Divide by zero!"
         divM x y = return (x / y)
 
+#if __GLASGOW_HASKELL__ < 808
 evalIntegralExpr :: (Integral a, Monad m) => Expr a -> m a
+#else
+evalIntegralExpr :: (Integral a, MonadFail m) => Expr a -> m a
+#endif
 evalIntegralExpr = evalExprWithDiv divM
     where
         divM x 0 = fail "Divide by zero!"
