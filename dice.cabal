@@ -12,8 +12,14 @@ license:                PublicDomain
 category:               Game
 synopsis:               Simplistic D&D style dice-rolling system.
 description:            Simplistic D&D style dice-rolling system.
+                        .
+                        > $ dice "2d10 + 2 * (d100 / d6)"
+                        > (5+2) + 2 * 64 / 2 => 71
 
 bug-reports:            https://github.com/lambdabot/dice/issues
+
+extra-source-files:
+  CHANGELOG
 
 source-repository head
   type: git
