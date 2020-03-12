@@ -1,21 +1,23 @@
 name:                   dice
-version:                0.1
+version:                0.1.0.1
 stability:              work-in-progress
 
 cabal-version:          >= 1.6
 build-type:             Simple
 
 author:                 James Cook <mokus@deepbondi.net>
-maintainer:             James Cook <mokus@deepbondi.net>
+maintainer:             Bertram Felgenhauer <int-e@gmx.de>
 license:                PublicDomain
 
 category:               Game
 synopsis:               Simplistic D&D style dice-rolling system.
 description:            Simplistic D&D style dice-rolling system.
 
+bug-reports:            https://github.com/lambdabot/dice/issues
+
 source-repository head
   type: git
-  location: git://github.com/mokus0/dice.git
+  location: git://github.com/lambdabot/dice.git
 
 Library
   hs-source-dirs:       src
