@@ -18,6 +18,7 @@ Icon?
 ###########
 
 dist
+dist-*
 *.o
 *.hi
 *.chi

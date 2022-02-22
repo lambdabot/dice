@@ -28,8 +28,9 @@ source-repository head
 Library
   hs-source-dirs:       src
   exposed-modules:      Data.Random.Dice
-  build-depends:        base >= 3 && < 5, random-fu, parsec, transformers
+  build-depends:        base >= 3 && < 5, random >= 1.2, random-fu >= 0.3, parsec, mtl
 
 Executable dice
   hs-source-dirs:       src
+  other-modules:        Data.Random.Dice
   main-is:              Dice.hs
